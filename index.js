@@ -486,10 +486,10 @@ Command.prototype.executeSubCommand = function(argv, args, unknown) {
 
   var proc;
   if (process.platform !== 'win32') {
-    proc = spawn(bin, args, { stdio: 'inherit'});
+    proc = spawn(bin, ['--harmony'].concat(args), { stdio: 'inherit'});
   } else {
     args.unshift(local);
-    proc = spawn(process.execPath, args, { stdio: 'inherit'});
+    proc = spawn(process.execPath, ['--harmony'].concat(args), { stdio: 'inherit'});
   }
 
   proc.on('close', process.exit.bind(process));

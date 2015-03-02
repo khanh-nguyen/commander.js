@@ -1,0 +1,11 @@
+#!/usr/bin/env node --harmony
+'use strict';
+
+let program = require('..');
+
+program
+  .version('0.0.1')
+  .command('test [file]', 'test support of es6 with git-style commands')
+  .parse(process.argv);
+
+

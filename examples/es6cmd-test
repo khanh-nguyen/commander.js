@@ -1,0 +1,19 @@
+#!/usr/bin/env node --harmony
+'use strict';
+
+let program = require('..');
+
+program.parse(process.argv);
+
+let files = program.args;
+
+if (!files.length) {
+  console.error('files required');
+  process.exit(1);
+}
+
+console.log();
+files.forEach(function(file){
+  console.log('  test : %s', file);
+});
+console.log();
